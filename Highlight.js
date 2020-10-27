@@ -10,7 +10,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 document.head.insertAdjacentHTML('beforeend', `<style type="text/css">
 correct-answer-x3Ca8B {
-  color: lightgray !important;
+  color: red !important;
 }
 </style>`);
 
