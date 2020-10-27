@@ -10,7 +10,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 document.head.insertAdjacentHTML('beforeend', `<style type="text/css">
 correct-answer-x3Ca8B {
-  color: gray !important;
+  color: lightgray !important;
 }
 </style>`);
 
@@ -255,14 +255,14 @@ function QuestionChangedLoop() {
                                         // We are on a question with multiple answers
                                         for (let x = 0; x < Answer.length; x++) {
                                             if (Fix(Choice.innerHTML) == Answer[x]) {
-                                                Choice.innerHTML = "<correct-answer-x3Ca8B>" + Choice.innerHTML + "</correct-answer-x3Ca8B>"
+                                                Choice.innerHTML = "<correct-answer-x3Ca8B><u>" + Choice.innerHTML + "</u></correct-answer-x3Ca8B>"
                                             }
                                         }
                                     } else {
                                         if (Fix(Choice.innerHTML) == Answer) {
-                                            Choice.innerHTML = "<correct-answer-x3Ca8B>" + Choice.innerHTML + "</correct-answer-x3Ca8B>"
+                                            Choice.innerHTML = "<correct-answer-x3Ca8B><u>" + Choice.innerHTML + "</u></correct-answer-x3Ca8B>"
                                         } else if (Choice.style.backgroundImage.slice(5, Choice.style.backgroundImage.length - 2).slice(0, Choice.style.backgroundImage.slice(5, Choice.style.backgroundImage.length - 2).search("/?w=") - 1) == GetAnswer(GetQuestion(GetSetData()))) {
-                                            Choice.innerHTML = "<correct-answer-x3Ca8B>Correct Answer</correct-answer-x3Ca8B>"
+                                            Choice.innerHTML = "<correct-answer-x3Ca8B><u>Correct Answer</u></correct-answer-x3Ca8B>"
                                         }
                                     }
                                 }
@@ -279,7 +279,7 @@ function QuestionChangedLoop() {
                     if (!Choices[i].classList.contains("emoji")) {
                         let Choice = Choices[i].children[0].children[0].children[0].children[0]
                         if (Fix(Choice.innerHTML) == GetAnswer(GetQuestion(GetSetData()))) {
-                            Choice.innerHTML = "<correct-answer-x3Ca8B>" + Choice.innerHTML + "</correct-answer-x3Ca8B>"
+                            Choice.innerHTML = "<correct-answer-x3Ca8B><u>" + Choice.innerHTML + "</u></correct-answer-x3Ca8B>"
                         }
                     }
                 }
